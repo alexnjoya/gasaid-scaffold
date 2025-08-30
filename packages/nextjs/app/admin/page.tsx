@@ -111,6 +111,15 @@ const AdminPage = () => {
             </div>
           ) : (
             <>
+              {/* Actions */}
+              <div className="flex justify-between items-center">
+                <h2 className="text-2xl font-bold">Partner Organizations</h2>
+                <Button className="btn-ethereum">
+                  <Plus className="w-4 h-4 mr-2" />
+                  Add Organization
+                </Button>
+              </div>
+
               {/* Stats Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {stats.map((stat, index) => (
@@ -137,15 +146,6 @@ const AdminPage = () => {
                     </Card>
                   </motion.div>
                 ))}
-              </div>
-
-              {/* Actions */}
-              <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold">Partner Organizations</h2>
-                <Button className="btn-ethereum">
-                  <Plus className="w-4 h-4 mr-2" />
-                  Add Organization
-                </Button>
               </div>
 
               {/* Organizations Table */}
@@ -191,7 +191,7 @@ const AdminPage = () => {
                               </Badge>
                             </td>
                             <td className="p-3 text-white/80">{org.users.toLocaleString()}</td>
-                            <td className="p-3 text-white/80">{org.donations}</td>
+                            <td className="p-3 text-green-400 font-semibold">{org.donations}</td>
                             <td className="p-3">
                               <Badge variant={getImpactColor(org.impact)}>
                                 {org.impact}
@@ -218,53 +218,7 @@ const AdminPage = () => {
                 </CardContent>
               </Card>
 
-              {/* Quick Actions */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="card-ethereum">
-                  <CardHeader>
-                    <CardTitle className="text-white text-lg">Add New Organization</CardTitle>
-                    <CardDescription className="text-white/80">
-                      Onboard new partner organizations
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button className="btn-ethereum w-full">
-                      <Plus className="w-4 h-4 mr-2" />
-                      Add Organization
-                    </Button>
-                  </CardContent>
-                </Card>
-
-                <Card className="card-ethereum">
-                  <CardHeader>
-                    <CardTitle className="text-white text-lg">Review Applications</CardTitle>
-                    <CardDescription className="text-white/80">
-                      Review pending organization applications
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button variant="outline" className="w-full bg-white/10 border-white/30 text-white hover:bg-white/20">
-                      <Eye className="w-4 h-4 mr-2" />
-                      Review Applications
-                    </Button>
-                  </CardContent>
-                </Card>
-
-                <Card className="card-ethereum">
-                  <CardHeader>
-                    <CardTitle className="text-white text-lg">Generate Reports</CardTitle>
-                    <CardDescription className="text-white/80">
-                      Create impact and analytics reports
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button variant="outline" className="w-full bg-white/10 border-white/30 text-white hover:bg-white/20">
-                      <Settings className="w-4 h-4 mr-2" />
-                      Generate Reports
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
+              {/* Quick Actions section removed */}
             </>
           )}
         </motion.div>

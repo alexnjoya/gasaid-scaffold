@@ -265,7 +265,7 @@ const ClaimPage = () => {
                           <span className="text-xs text-muted-foreground">{formatTimeAgo(claimant.timestamp)}</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-xs text-primary font-medium">
+                          <span className="text-xs text-[hsl(250_95%_60%)] font-medium">
                             {claimant.amount} ETH
                           </span>
                           <span className="text-xs text-muted-foreground">Claimed</span>
@@ -289,7 +289,7 @@ const ClaimPage = () => {
                           <span className="text-xs text-muted-foreground">{formatTimeAgo(claimant.timestamp)}</span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-xs text-primary font-medium">
+                          <span className="text-xs text-[hsl(250_95%_60%)] font-medium">
                             {claimant.amount} ETH
                           </span>
                           <span className="text-xs text-muted-foreground">Claimed</span>

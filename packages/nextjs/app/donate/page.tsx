@@ -7,7 +7,6 @@ import { Button } from '../../components/ui/button'
 import { Input } from '../../components/ui/input'
 import { Label } from '../../components/ui/label'
 import { Badge } from '../../components/ui/badge'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../components/ui/select'
 import { useGasStore } from '../../store/gasStore'
 import { NetworkSelector, Network, NETWORKS } from '../../components/NetworkSelector'
 // import confetti from 'canvas-confetti'
@@ -185,22 +184,14 @@ const DonatePage = () => {
                       {/* Donation Target */}
                       <div className="space-y-2">
                         <Label>Donation Target</Label>
-                        <Select
+                        <select
                           value={donationType}
-                          onValueChange={(value: string) => setDonationType(value as 'main' | 'subdomain')}
+                          onChange={(e) => setDonationType(e.target.value as 'main' | 'subdomain')}
+                          className="w-full p-2 border border-border rounded-md text-lg font-semibold"
                         >
-                          <SelectTrigger>
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="main">
-                              <span>Main Pool (gasfund.eth)</span>
-                            </SelectItem>
-                            <SelectItem value="subdomain">
-                              <span>Specific ENS Subdomain</span>
-                            </SelectItem>
-                          </SelectContent>
-                        </Select>
+                          <option value="main">Main Pool (gasfund.eth)</option>
+                          <option value="subdomain">Specific ENS Subdomain</option>
+                        </select>
                       </div>
 
                       {/* Target Subdomain */}
@@ -294,7 +285,7 @@ const DonatePage = () => {
                               <span className="text-xs text-muted-foreground">{formatTimeAgo(donor.timestamp)}</span>
                             </div>
                             <div className="flex items-center justify-between">
-                              <span className="text-xs text-primary font-medium">
+                              <span className="text-xs text-[hsl(250_95%_60%)] font-medium">
                                 {donor.amount} ETH
                               </span>
                               <span className="text-xs text-muted-foreground capitalize">
@@ -323,7 +314,7 @@ const DonatePage = () => {
                               <span className="text-xs text-muted-foreground">{formatTimeAgo(donor.timestamp)}</span>
                             </div>
                             <div className="flex items-center justify-between">
-                              <span className="text-xs text-primary font-medium">
+                              <span className="text-xs text-[hsl(250_95%_60%)] font-medium">
                                 {donor.amount} ETH
                               </span>
                               <span className="text-xs text-muted-foreground capitalize">

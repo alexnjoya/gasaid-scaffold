@@ -54,13 +54,13 @@ const DashboardPage = () => {
                       <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
                         <stat.icon className="w-6 h-6 text-white" />
                       </div>
-                      <Badge variant="success" className="text-xs">
+                      <Badge variant="success" className="text-xs text-green-400">
                         {stat.change}
                       </Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-2xl font-bold text-white mb-2">
+                    <div className="text-2xl font-bold text-green-400 mb-2">
                       {stat.value}
                     </div>
                     <div className="text-white/80 text-sm">
@@ -77,9 +77,8 @@ const DashboardPage = () => {
             {/* Recent Claims */}
             <Card className="card-ethereum">
               <CardHeader>
-                <CardTitle className="text-white text-xl flex items-center space-x-2">
-                  <Eye className="w-5 h-5" />
-                  <span>Recent Gas Claims</span>
+                <CardTitle className="text-white text-xl">
+                  Recent Gas Claims
                 </CardTitle>
                 <CardDescription className="text-white/80">
                   Latest gas claims from new Web3 users
@@ -94,7 +93,7 @@ const DashboardPage = () => {
                           <span className="text-white text-xs font-bold">{index + 1}</span>
                         </div>
                         <div>
-                          <div className="text-white font-medium text-sm">
+                          <div className="text-[hsl(250_95%_60%)] font-medium text-sm">
                             {claim.address}
                           </div>
                           <div className="text-white/60 text-xs">
@@ -119,9 +118,8 @@ const DashboardPage = () => {
             {/* Recent Donations */}
             <Card className="card-ethereum">
               <CardHeader>
-                <CardTitle className="text-white text-xl flex items-center space-x-2">
-                  <Heart className="w-5 h-5" />
-                  <span>Recent Donations</span>
+                <CardTitle className="text-white text-xl">
+                  Recent Donations
                 </CardTitle>
                 <CardDescription className="text-white/80">
                   Latest contributions from our generous sponsors
@@ -136,7 +134,7 @@ const DashboardPage = () => {
                           <span className="text-white text-xs font-bold">{index + 1}</span>
                         </div>
                         <div>
-                          <div className="text-white font-medium text-sm">
+                          <div className="text-[hsl(250_95%_60%)] font-medium text-sm">
                             {donation.address}
                           </div>
                           <div className="text-white/60 text-xs">
@@ -159,8 +157,7 @@ const DashboardPage = () => {
             </Card>
           </div>
 
-          {/* Impact Metrics */}
-          <Card className="card-ethereum">
+                  {/* <Card className="card-ethereum">
             <CardHeader>
               <CardTitle className="text-white text-2xl">Platform Impact</CardTitle>
               <CardDescription className="text-white/80">
@@ -192,29 +189,10 @@ const DashboardPage = () => {
                 </div>
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
 
           {/* Call to Action */}
-          <div className="text-center">
-            <Card className="card-ethereum max-w-2xl mx-auto">
-              <CardHeader>
-                <CardTitle className="text-white text-2xl">Want to Contribute?</CardTitle>
-                <CardDescription className="text-white/80">
-                  Join our community of sponsors and help more people enter Web3
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="/donate" className="btn-ethereum px-8 py-3 text-lg font-semibold">
-                    Become a Sponsor
-                  </a>
-                  <a href="/claim" className="px-8 py-3 rounded-lg border border-white/30 text-white hover:bg-white/20 transition-colors">
-                    Claim Free Gas
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+        
         </motion.div>
       </div>
     </div>
